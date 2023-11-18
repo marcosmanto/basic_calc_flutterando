@@ -122,7 +122,7 @@ class ButtonHub extends StatelessWidget {
         Button(
           value: '=',
           color: const Color.fromARGB(255, 215, 94, 1),
-          onTap: (value) => onButtonClick(CommonButtonClick(value)),
+          onTap: (value) => onButtonClick(EqualsButtonClick(value)),
         ),
       ],
     );
