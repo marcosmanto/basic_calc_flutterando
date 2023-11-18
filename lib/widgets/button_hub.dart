@@ -138,17 +138,19 @@ class Button extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final color = this.color ?? Theme.of(context).colorScheme.primaryContainer;
-    return InkWell(
-      // trigger callback function when tap the button, passing the button's value to the callback
-      // if no callback is passed do nothing
-      onTap: onTap == null ? null : () => onTap!(value),
-      child: Container(
-        alignment: Alignment.center,
-        padding: const EdgeInsets.all(8),
-        color: color,
-        child: Text(
-          value,
-          style: Theme.of(context).textTheme.displaySmall,
+    return Material(
+      color: color,
+      child: InkWell(
+        // trigger callback function when tap the button, passing the button's value to the callback
+        // if no callback is passed do nothing
+        onTap: onTap == null ? null : () => onTap!(value),
+        child: Container(
+          alignment: Alignment.center,
+          padding: const EdgeInsets.all(8),
+          child: Text(
+            value,
+            style: Theme.of(context).textTheme.displaySmall,
+          ),
         ),
       ),
     );
